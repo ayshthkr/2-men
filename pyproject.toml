@@ -1,0 +1,9 @@
+[project]
+name = "2-men"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "synapseclient>=4.7.0",
+]
