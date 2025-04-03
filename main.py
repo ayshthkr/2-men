@@ -62,14 +62,16 @@ def process_and_save_images(t1c_list, t1n_list, t2w_list, t2f_list, mask_list,
         # Crop region of interest
         combined_img = np.stack([t1c_img, t1n_img, t2w_img, t2f_img], axis=3)
 
+        print("SHAPE: ", combined_img.shape)
+
         val, counts = np.unique(mask_img, return_counts=True)
-        print("VAL: ", val)
-        print("COUNTS: ", counts)
+        # print("VAL: ", val)
+        # print("COUNTS: ", counts)
         tumor_ratio = 1 - (counts[0] / counts.sum())
-        print("tumor ratio: ", tumor_ratio)
+        # print("tumor ratio: ", tumor_ratio)
 
         print(f"{Fore.GREEN}✔ Saving{Style.RESET_ALL}")
-        # mask_img = to_categorical(mask_img, num_classes=4)
+        mask_img = to_categorical(mask_img, num_classes=4)
         np.save(f"{output_dir}/images/image_{img_idx}.npy", combined_img)
         np.save(f"{output_dir}/masks/mask_{img_idx}.npy", mask_img)
 

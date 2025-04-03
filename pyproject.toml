@@ -5,5 +5,14 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "synapseclient>=4.7.0",
+    "colorama>=0.4.6",
+    "matplotlib>=3.10.1",
+    "nibabel>=5.3.2",
+    "numpy>=2.2.4",
+    "pandas>=2.2.3",
+    "scikit-learn>=1.6.1",
+    "split-folders>=0.5.1",
+    "torch>=2.6.0",
+    "torchinfo>=1.8.0",
+    "tqdm>=4.67.1",
 ]
